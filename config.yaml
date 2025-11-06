@@ -1,0 +1,43 @@
+experiment:
+  name: "multi_agent_traffic_ppo"
+  seed: 42
+  device: "mps" 
+  log_dir: "results"
+  
+sumo:
+  cfg_file: "maps/sumo.sumocfg"
+  use_gui: false
+  num_seconds: 5000 
+  delta_time: 5  
+  yellow_time: 3  
+  min_green: 5
+  max_green: 50
+  begin_time: 0
+  
+environment:
+  reward_type: "diff-waiting-time" 
+  observation_type: "default" 
+  add_system_info: true
+  add_per_agent_info: true
+  normalize_observations: true
+  
+training:
+  algorithm: "ppo"
+  total_episodes: 100 
+  max_steps_per_episode: 1000 
+  batch_size: 64
+  learning_rate: 0.0005  
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_epsilon: 0.2
+  entropy_coef: 0.02 
+  value_loss_coef: 0.5
+  max_grad_norm: 0.5
+  ppo_epochs: 10
+  save_freq: 1 
+  eval_freq: 1
+  log_freq: 1
+  
+evaluation:
+  num_episodes: 5
+  save_video: false

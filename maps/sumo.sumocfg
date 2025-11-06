@@ -1,0 +1,6 @@
+<configuration>
+    <input>
+        <net-file value="map_tls_fixed.net.xml"/>
+        <route-files value="map.rou_rl_ready.xml"/> 
+    </input>
+</configuration>
