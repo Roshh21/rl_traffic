@@ -44,10 +44,3 @@ For **best results**, train for **at least 1000 episodes** to ensure stable lear
     ```
 
     This will load the trained model and visualize the learned behavior in the SUMO GUI.
-
-5. **Monitoring**
-
-    Track training progress and performance metrics with TensorBoard:
-    ```
-    tensor
-    ```
